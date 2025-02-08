@@ -42,6 +42,31 @@ intents = [
         "responses": ["Sure, what do you need help with? Strats, aiming, or economy?", "I'm here to help! Need a good T-side strategy?", "Want to know how to clutch better? Ask away!"]
     },
     {
+    "tag": "cs2_skins",
+    "patterns": [
+        "How do CS2 skins work?",
+        "What are some good CS2 skins?",
+        "What affects the price of a skin?",
+        "How can I trade skins?",
+        "Are CS2 skins purely cosmetic?",
+        "What are some rare and expensive CS2 skins?"
+    ],
+    "responses": [
+        "CS2 skins are cosmetic weapon finishes that do not affect gameplay but can be bought, sold, and traded. Skins come in different rarities, conditions (float values), and some have unique features like StatTrak or rare patterns. They can be obtained from cases, operations, or by trading with other players.",
+        
+        "Some good and affordable skins include: AK-47 | Redline, M4A1-S | Nightmare, AWP | Atheris, Glock-18 | Water Elemental, and USP-S | Cortex. These skins have great designs and are budget-friendly for most players.",
+        
+        "The price of a skin is influenced by several factors, including: its rarity (Covert, Classified, Restricted, etc.), wear condition (Factory New to Battle-Scarred), demand, special features like StatTrak or Souvenir status, and rare pattern variations like the Blue Gem Karambit or Case Hardened AK-47.",
+        
+        "Rare and expensive skins include: AWP | Dragon Lore (one of the most famous and valuable skins), AK-47 | Case Hardened (especially with blue gem patterns), Karambit | Gamma Doppler Emerald, and M4A4 | Howl (which is no longer obtainable from cases). Some knives, like the Karambit and Butterfly Knife in rare finishes, can sell for thousands of dollars.",
+        
+        "You can trade skins using the Steam Community Market, direct trading with other players, or third-party marketplaces. Always be cautious of scams and double-check trade offers before accepting.",
+        
+        "Yes, CS2 skins are purely cosmetic and do not provide any in-game advantages. However, some skins are seen as status symbols due to their rarity and high price, making them desirable among collectors and traders."
+    ]
+},
+
+    {
         "tag": "cs_strats",
         "patterns": ["What are good CS strategies?", "Best T-side strategies?", "Best CT-side strategies?", "How do I execute a site take?", "What are some good strats for Dust 2?"],
         "responses": [
