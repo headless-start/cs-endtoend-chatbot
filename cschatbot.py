@@ -42,6 +42,28 @@ intents = [
         "responses": ["Sure, what do you need help with? Strats, aiming, or economy?", "I'm here to help! Need a good T-side strategy?", "Want to know how to clutch better? Ask away!"]
     },
     {
+    "tag": "mirage_execution",
+    "patterns": [
+        "How do I execute on Mirage A site?",
+        "What are the best smokes for Mirage A site?",
+        "How do I take B site on Mirage?",
+        "What utility should I use for a Mirage B execute?",
+        "What are some good Mirage executes?"
+    ],
+    "responses": [
+        "Executing A site on Mirage requires proper smokes and flashes. Common smokes include CT (Ticket Booth), Jungle, and Stairs. A typical execute involves throwing these smokes, flashing over, and taking control of the site with a player planting the bomb while others hold key angles.",
+        
+        "The best smokes for an A execute on Mirage are: \n1. CT (blocks vision from Ticket Booth) \n2. Jungle (cuts off rotations from mid) \n3. Stairs (prevents defenders from peeking site). Combine these with flashes and a Molotov for Default or Triple Box to force defenders out.",
+        
+        "Taking B site on Mirage requires smokes for Market Window and Market Door, along with Molotovs to clear Van and Bench. Flashbangs should be thrown to blind defenders holding from site or Short. After securing control, make sure to check Boost and Bench before planting the bomb.",
+        
+        "For a successful B execute on Mirage, use the following utility: \n- Smokes for Market Window and Market Door \n- Molotovs for Van and Bench \n- HE grenades for Short and Market \n- Flashes over Apartments to blind defenders. Coordinated utility usage can help overwhelm defenders and secure the site.",
+        
+        "Some strong Mirage executes involve fast A pushes with triple smokes (CT, Jungle, Stairs) and flashes over, or a delayed B hit with Apartments and Short control. Mid control is also crucial for splitting A or B effectively."
+    ]
+},
+
+    {
     "tag": "cs2_skins",
     "patterns": [
         "How do CS2 skins work?",
