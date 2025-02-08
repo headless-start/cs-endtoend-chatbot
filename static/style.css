@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #d0e8ff; 
+    font-family: 'Poppins', sans-serif; 
+}
+
+.chat-container {
+    background: #ffffff;
+    color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+}
+
+.chat-box {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #f0f8ff;
+}
+
+.message {
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.user {
+    background: #007bff;
+    color: white;
+    text-align: right;
+    border-radius: 8px 8px 0 8px;
+}
+
+.bot {
+    background: #ddd;
+    color: #333;
+    text-align: left;
+    border-radius: 8px 8px 8px 0;
+}
+
+input {
+    width: calc(100% - 60px);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+

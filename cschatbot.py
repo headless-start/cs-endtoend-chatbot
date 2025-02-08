@@ -1,14 +1,17 @@
 import os
+import json
+import random
 import nltk
 import ssl
 import streamlit as st
-import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+from flask import Flask, request, jsonify, render_template
 
 # Set up SSL context and download NLTK data
+
+
 ssl._create_default_https_context = ssl._create_unverified_context
-nltk.data.path.append(os.path.abspath("nltk_data"))
 nltk.download('punkt')
 
 # Define your intents
@@ -86,50 +89,39 @@ intents = [
     }
 ]
 
-# Set up the vectorizer and classifier
 vectorizer = TfidfVectorizer()
 clf = LogisticRegression(random_state=0, max_iter=10000)
+tags, patterns = [], []
 
-# Preprocess the data: prepare patterns and corresponding tags
-tags = []
-patterns = []
 for intent in intents:
-    for pattern in intent['patterns']:
-        tags.append(intent['tag'])
+    for pattern in intent["patterns"]:
+        tags.append(intent["tag"])
         patterns.append(pattern)
 
-# Train the model
-x = vectorizer.fit_transform(patterns)
-y = tags  # Correct assignment of y
-clf.fit(x, y)
+X = vectorizer.fit_transform(patterns)
+y = tags
+clf.fit(X, y)
 
-# Define the chatbot function
+# Define chatbot response function
 def chatbot(input_text):
     input_text_transformed = vectorizer.transform([input_text])
     tag = clf.predict(input_text_transformed)[0]
     for intent in intents:
-        if intent['tag'] == tag:
-            response = random.choice(intent['responses'])
-            return response
+        if intent["tag"] == tag:
+            return random.choice(intent["responses"])
 
-# Streamlit setup for the chat interface
-counter = 0
+# Create Flask app
+app = Flask(__name__)
 
-def main():
-    global counter
-    st.title("Chatbot")
-    st.write("Welcome to the chatbot. Please type a message and press Enter to start the conversation.")
+@app.route("/")
+def home():
+    return render_template("index.html")
 
-    counter += 1
-    user_input = st.text_input("You:", key=f"user_input_{counter}")
+@app.route("/chatbot", methods=["POST"])
+def chat():
+    user_message = request.json["message"]
+    bot_response = chatbot(user_message)
+    return jsonify({"response": bot_response})
 
-    if user_input:
-        response = chatbot(user_input)
-        st.text_area("Chatbot:", value=response, height=100, max_chars=None, key=f"chatbot_response_{counter}")
-
-        if response.lower() in ['goodbye', 'bye']:
-            st.write("Thank you for chatting with me. Have a great day!")
-            st.stop()
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    app.run(debug=True)
